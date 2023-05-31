@@ -59,29 +59,10 @@ async def a_do(itemToiterable, *map_funcs):
     result = await asyncio.gather(*[f(itemToiterable[0]) for f in map_funcs])
     yield result
 
-'''
-async def square(x):
-    return x ** 2
 
-async def cube(x):
-    return x ** 3
-'''
 async def process_data(data):
-    '''
-    result = [item async for item in data | aSelect(lambda x: x['name'], lambda x: x['age'])]
 
-    result = [item async for item in data | aWhere('all', lambda x: x['gender'] == 'male')
-                                          | aSelect(lambda x: x['name'], lambda x: x['age'])
-              ]
-    result = await (data | Areduce(lambda x, y: x + y))
-    result = [(key, [item async for item in group]) async for key, group in data | aGroupby(lambda x: x['gender'])]
-    result = [item async for item in data | aMap(double)]
-    print(result)
-     '''
-
-
-    result= [item async for item in data | map(square, cube)]
-    
+    result= [item async for item in data | map(square, cube)]  
     print(result)
 
 
