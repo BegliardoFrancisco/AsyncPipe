@@ -7,7 +7,7 @@
 # async def cube(x):
  #   return x ** 3
 
-#async def main(data):
+# async def main(data):
 #    result = [item async for item in data | aSelect(lambda x: x['name'], lambda x: x['age'])]
 #    result = [item async for item in data | aWhere('all', lambda x: x['gender'] == 'male') | aSelect(lambda x: x['name'], lambda x: x['age'])]
  #   result = await (data | Areduce(lambda x, y: x + y))
